@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SkylineSyntax | Human Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            text-align: center;
+            padding: 50px;
+        }
+        .captcha-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: 100px auto;
+        }
+        .captcha-container h2 {
+            color: #0b5394;
+        }
+        .captcha-container input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+        }
+        .captcha-container button {
+            padding: 10px 20px;
+            background: #0b5394;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .captcha-container button:hover {
+            background: #094178;
+        }
+        .message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="captcha-container" id="captchaBox">
+        <h2>Verify You Are Human</h2>
+        <p>Solve this: <span id="captchaQuestion"></span></p>
+        <input type="number" id="captchaInput" placeholder="Your Answer" required>
+        <button onclick="verifyCaptcha()">Submit</button>
+        <p class="message" id="captchaMessage"></p>
+    </div>
+
+    <script>
+        // Generate Simple Math CAPTCHA
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        document.getElementById('captchaQuestion').textContent = `${num1} + ${num2} = ?`;
+
+        function verifyCaptcha() {
+            const userAnswer = parseInt(document.getElementById('captchaInput').value);
+            const correctAnswer = num1 + num2;
+
+            if (userAnswer === correctAnswer) {
+                localStorage.setItem('captchaVerified', 'true');
+                window.location.href = "main.html";
+            } else {
+                document.getElementById('captchaMessage').textContent = "Incorrect answer. Try again.";
+            }
+        }
+
+       
+        
+    </script>
+</body>
+</html>
