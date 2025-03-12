@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Policies - Skyline Syntax</title>
+    <link rel="stylesheet" href="policy.css">
+</head>
+<body>
+
+    <header>
+        <h1>Skyline Syntax Payment Policies</h1>
+    </header>
+
+    <section class="policy">
+        <h2>General Policies</h2>
+        <ul>
+            <li>All payments must be made through authorized payment methods.</li>
+            <li>Prices listed for services are fixed unless otherwise stated.</li>
+            <li>Payments must be completed before final delivery.</li>
+            <li>No refunds will be provided except in specified cases.</li>
+            <li>Skyline Syntax reserves the right to modify service charges anytime.</li>
+        </ul>
+    </section>
+
+    <section class="policy">
+        <h2>Website Design & Development Payment Policy</h2>
+        <ul>
+            <li>After website design approval, a <b>₹500 refundable fee</b> will be charged.</li>
+            <li>After website development approval, the <b>full remaining payment is required</b>, which is <b>non-refundable</b>.</li>
+        </ul>
+    </section>
+
+    <section class="policy">
+        <h2>Domain Pricing</h2>
+        <div class="responsive-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain Extension</th>
+                        <th>Regular Price</th>
+                        <th>Discounted Price (First Year)</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>.in</td>
+                        <td>₹1,300.00</td>
+                        <td>₹499.00</td>
+                        <td>61%</td>
+                    </tr>
+                    <tr>
+                        <td>.com</td>
+                        <td>₹1,179.00</td>
+                        <td>₹499.00</td>
+                        <td>58%</td>
+                    </tr>
+                    <tr>
+                        <td>.online</td>
+                        <td>₹2,859.00</td>
+                        <td>₹499.00</td>
+                        <td>82.5%</td>
+                    </tr>
+
+                    <tr>
+                        <td>.org</td>
+                        <td>₹1,299.00</td>
+                        <td>₹699.00</td>
+                        <td>46%</td>
+                    </tr>
+
+                    <tr>
+                        <td>.co.in</td>
+                        <td>₹639.00</td>
+                        <td>₹579.00</td>
+                        <td>9%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p><b>Note:</b> Discounted prices apply only for the first year. From the second year, the regular price will be charged.</p>
+    </section>
+
+    
+
+    <section class="policy">
+        <h2>Reactivation Fees</h2>
+        <ul>
+            <li>If a domain expires, a reactivation fee may be charged as per registrar policies.</li>
+            <li>If a website is suspended due to non-payment, a <b>₹1,000 reactivation fee</b> will be required.</li>
+            <li>Skyline Syntax is not responsible for any data loss due to expiration or suspension.</li>
+        </ul>
+    </section>
+
+    <section class="policy">
+        <h2>Additional Policies</h2>
+        <ul>
+            <li>Skyline Syntax reserves the right to change pricing at any time.</li>
+            <li>Domain prices may change yearly as per registrar policies.</li>
+            <li>Delays in client approvals may impact project timelines.</li>
+            <li>Full ownership of a project is transferred only after complete payment.</li>
+            <li>Late payments may result in service suspension or termination.</li>
+        </ul>
+    </section>
+
+    <section class="policy">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <button class="faq-question">What payment methods do you accept? <span>+</span></button>
+            <div class="faq-answer">We accept UPI, Bank Transfer, Cards, and Visa Cards.</div>
+    
+            <button class="faq-question">Can I cancel my domain purchase after payment? <span>+</span></button>
+            <div class="faq-answer">No, domain purchases are non-refundable once registered.</div>
+    
+            <button class="faq-question">What if my website is suspended due to non-payment? <span>+</span></button>
+            <div class="faq-answer">You will need to pay the pending amount along with the ₹1,000 reactivation fee.</div>
+        </div>
+    </section>
+
+   
+
+
+    <section class="policy">
+        <h2>Domain Price Calculator</h2>
+        <div class="calculator">
+            <label for="domainSelect">Select Domain Type:</label>
+            <select id="domainSelect">
+                <option value="in">.in - ₹1,300 (₹499 first year)</option>
+                <option value="com">.com - ₹1,179 (₹499 first year)</option>
+                <option value="online">.online - ₹2,859 (₹499 first year)</option>
+                <option value="org">.org - ₹1,299 (₹699 first year)</option>
+                <option value="co">.co.in - ₹639 (₹579 first year)</option>
+            </select>
+            <div class="price-box">
+                <p><b>Renewal Cost:</b> <span id="renewalCost">Select a domain</span></p>
+            </div>
+        </div>
+    </section>
+
+   
+    
+    
+    
+
+    <footer>
+        <p>© 2025 Skyline Syntax. All Rights Reserved.</p>
+    </footer>
+
+    <a target="_blank" href="https://wa.me/+916280144157" class="chat-button">Chat with Us</a>
+
+
+</body>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        button.nextElementSibling.classList.toggle('active');
+    });
+});
+
+</script>
+
+<script>
+    document.getElementById('domainSelect').addEventListener('change', function() {
+        let renewalPrices = { "in": "₹1,300", "com": "₹1,179", "online": "₹2,859", "org": "1,299" , "co": "639" };
+        document.getElementById('renewalCost').innerText = renewalPrices[this.value];
+    });
+</script>
+</html>
